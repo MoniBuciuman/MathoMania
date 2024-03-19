@@ -15,8 +15,9 @@ import {
 } from 'react-native';
 import background from '../assets/background.webp';
 
-export const Home = () => {
-  const onPress = () => {};
+export const HomeScreen = ({navigation}: {navigation: any}) => {
+  const onPress = () => navigation.navigate('SelectionScreen');
+
   return (
     <View style={styles.container}>
       <ImageBackground

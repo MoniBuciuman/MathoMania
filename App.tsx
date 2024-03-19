@@ -6,14 +6,30 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
-import {Home} from './src/screens/home';
+import {StyleSheet} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {HomeScreen} from './src/screens/homeScreen';
+import {SelectionScreen} from './src/screens/selectionScreen';
+import {FirstGradeScreen} from './src/screens/firstGradeScreen';
+import {SecondGradeScreen} from './src/screens/secondGradeScreem';
+import {ThirdGradeScreen} from './src/screens/thirdGradeScreen';
+import {FourthGradeScreen} from './src/screens/fourthGradeScreen';
+
+const Stack = createNativeStackNavigator();
 
 function App(): React.JSX.Element {
   return (
-    <SafeAreaView style={styles.container}>
-      <Home />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="SelectionScreen" component={SelectionScreen} />
+        <Stack.Screen name="FirstGradeScreen" component={FirstGradeScreen} />
+        <Stack.Screen name="SecondGradeScreen" component={SecondGradeScreen} />
+        <Stack.Screen name="ThirdGradeScreen" component={ThirdGradeScreen} />
+        <Stack.Screen name="FourthGradeScreen" component={FourthGradeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
